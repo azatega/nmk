@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NMK Companies</title>
+    <meta name="description" content="Blending Ingenuity and Practical Efficiency. NMK Companies engineer out of the box solutions for special situations real estate assets throughout the capital stack">
+    <meta name="robots" content="index, follow" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+
+    <!-- Open Sans -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+
+    <div class="home-container show">
+            <img src="nmk.png" alt="" style="margin-bottom: 10px;">
+            <h2> Building thoughtful real estate businesses</h2>
+            <div class="links">
+                <a href="#info" class="info-link" onclick="showInfo();">Information</a>  
+                <a href="https://agilecapitalpartners.com/">Agile Capital Partners</a></h3> 
+                <a href="https://www.praxiscre.com/">Praxis CRE</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-container">
+        <h1> Info </h1>
+        <div class="content" style="max-width: 540px; text-align: left; line-height: 1.5;">
+            <h3 style="margin-top: 0px;">46 Howard Street - 3rd floor</h3>
+            <h3>New York, NY 10038</h3>
+            <h3>Phone: <a href="tel: 646-893-0987">646-893-0987</a></h3>
+            <h3>
+                For all general inquries requests,<br>
+                <a href="mailto: info@nmkcompanies.com"> info@nmkcompanies.com</a>
+            </h3>  
+        </div>
+        <div class="links" style="margin-top: 0px;">
+            <a href="#home" class="info-link" onclick="showHome();">Back</a>
+        </div>
+    </div>
+
+    <style>
+        .background{
+            z-index: -1;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            position: fixed;
+            background-image: linear-gradient(0deg, rgba(255,255,255,0.97) 0%,rgba(255,255,255,0.97) 100%), url('background.jpg');
+        }
+
+        html, body{
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            color: #232323;
+        }
+
+        h1{
+            font-weight: 700;
+            margin-right: 0px;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-size: 20px
+        }
+
+        h2{
+            font-weight: 600;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #354854;
+        }
+
+        h3{
+            font-weight: 400;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        img{
+            width: 128px;
+            max-width: 80%;
+        }
+
+        .home-container, .info-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 20px;
+            right: 20px;
+            bottom: 0;
+            height: 100vh;
+            opacity: 0;
+            transition: all 0.5s ease;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            pointer-events: none;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .home-container{
+            z-index: 0.85;
+            transform: translateY(-150px);
+        }
+
+        .info-container{
+            z-index: 2;
+            transform: translateY(150px);
+        }
+
+        .show{
+            opacity: 0.85;
+            transform: none;
+            pointer-events: initial;
+        }
+
+        .links{
+            margin-top: 0px;
+        }
+
+        a{
+            color: #232323;
+        }
+
+        a:hover{
+            color: black;
+        }
+
+        .links a{
+            text-decoration: underline;
+            font-family: 'Open Sans', sans-serif;
+            color: black;
+            font-weight: 600;
+            font-size: 16px;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 10px;
+            opacity: 0.9
+        }
+
+        a:hover{
+            opacity: 1;
+        }
+
+        .hide{
+            display: none;
+        }
+    </style>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+            var type = window.location.hash.substr(1);
+            if(type == 'Info')
+                showInfo();
+        });
+
+        function showInfo(){
+            $('.home-container').removeClass('show');
+            $('.info-container').addClass('show');
+        }
+
+        function showHome(){
+            $('.info-container').removeClass('show');
+            $('.home-container').addClass('show');
+        }
+    </script>   
+</body>
+</html>
