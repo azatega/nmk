@@ -25,7 +25,7 @@
                 <a href="#info" class="info-link" onclick="showInfo();">Information</a>  
                 <a href="https://agilecapitalpartners.com/">Agile&nbsp;Capital&nbsp;Partners</a></h3> 
                 <a href="https://www.praxiscre.com/">Praxis&nbsp;CRE</a>
-                <p>NMK&nbsp;Ventures</p>
+                <a href="#ventures" class="info-link" onclick="showInfo();">NMK&nbsp;Ventures</a>
             </div>
         </div>
     </div>
@@ -33,7 +33,6 @@
     <div class="info-container">
         <h1> Info </h1>
         <div class="content" style="max-width: 540px; text-align: left; line-height: 1.5;">
-            <h3 style="margin-top: 0px;">Nmk ventures enters a wide breadth of business and consumer ventures.</h3>
             <h3>46 Howard Street - 3rd floor</h3>
             <h3>New York, NY 10038</h3>
             <h3>Phone: <a href="tel: 646-893-0987">646-893-0987</a></h3>
@@ -47,6 +46,19 @@
         </div>
     </div>
 
+    
+    <div class="ventures-container">
+        <h1> NMK Ventures </h1>
+        <div class="content" style="max-width: 540px; text-align: left; line-height: 1.5;">
+            
+        <h3 style="margin-top: 0px;">Nmk ventures enters a wide breadth of business and consumer ventures.</h3>
+        </div>
+        <div class="links" style="margin-top: 0px;">
+            <a href="#home" class="info-link" onclick="showHome();">Back</a>
+        </div>
+    </div>
+
+    
     <style>
         .background{
             z-index: -1;
@@ -170,6 +182,9 @@
             var type = window.location.hash.substr(1);
             if(type == 'Info')
                 showInfo();
+            
+            if(type == 'Ventures')
+                showVentures();
         });
 
         function showInfo(){
@@ -177,7 +192,13 @@
             $('.info-container').addClass('show');
         }
 
+        function showVentures(){
+            $('.home-container').removeClass('show');
+            $('.ventures-container').addClass('show');
+        }
+
         function showHome(){
+            $('.ventures-container').removeClass('show');
             $('.info-container').removeClass('show');
             $('.home-container').addClass('show');
         }
